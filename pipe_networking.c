@@ -61,20 +61,7 @@ int server_connect(int from_client) {
   returns the file descriptor for the upstream pipe.
   =========================*/
 int server_handshake(int *to_client) {
-  int from_client = server_setup();
-  
-  int f = fork();
-
-  if (! f){
-    *to_client = server_connect(from_client);
-  }
-
-  else{
-    close(from_client);
-  }
-  
-
-  return from_client;
+  return 1;
 }
 
 /*=========================
